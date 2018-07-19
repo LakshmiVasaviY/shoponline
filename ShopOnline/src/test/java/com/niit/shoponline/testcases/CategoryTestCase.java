@@ -3,7 +3,6 @@ package com.niit.shoponline.testcases;
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -13,7 +12,8 @@ import com.niit.shoponline.model.Category;
 
 
 
-public class CategoryTestCase {
+public class CategoryTestCase 
+{
 
 	@Autowired
 	static AnnotationConfigApplicationContext context;
@@ -25,7 +25,8 @@ public class CategoryTestCase {
 	static Category category;
 
 	@BeforeClass
-	public static void initialize() {
+	public static void initialize() 
+	{
 		context = new AnnotationConfigApplicationContext();
 		context.scan("com");
 		context.refresh();
@@ -39,8 +40,7 @@ public class CategoryTestCase {
 
 	}
 
-	/*@Ignore
-    @Test
+	@Test
 	public void createCategoryTestCase() {
 		category.setId("CATG1");
 		category.setName("Diabetic Medicine");
@@ -51,7 +51,7 @@ public class CategoryTestCase {
 		assertEquals("createCategoryTestCase", true, flag);
 
 	}
-	@Ignore
+
 	@Test
 	public void updateCategoryTestCase() {
 		category.setId("CATG1");
@@ -63,7 +63,7 @@ public class CategoryTestCase {
 		assertEquals("updateCategoryTestCase", true, flag);
 
 	}
-    @Ignore
+
 	@Test
 	public void deleteCategoryTestCase() {
 		category.setName("Dental Medicine");
@@ -72,11 +72,12 @@ public class CategoryTestCase {
 		assertEquals("deleteCategoryTestCase", true, flag);
 
 	}
-    @Ignore
+
 	@Test
-	public void listAllCategoryTestCase() {
+	public void listAllCategoryTestCase() 
+	{
 		int actualSize = categoryDAO.list().size();
 		assertEquals(6, actualSize);
 	}
-*/
+
 }

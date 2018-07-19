@@ -17,13 +17,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.niit.shoponline.model.Category;
 import com.niit.shoponline.model.Product;
 import com.niit.shoponline.model.Supplier;
-import com.niit.shoponline.model.User;
-
-
+//import com.niit.shoponline.model.User;
 
 
 @Configuration
-@ComponentScan("com.niit")
+@ComponentScan("com")
 @EnableTransactionManagement
 public class DBConfig 
 {
@@ -43,8 +41,7 @@ public class DBConfig
 	}
 
 	
-	private Properties getHibernateProperties() 
-	{
+	private Properties getHibernateProperties() {
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 		properties.put("hibernate.show_sql", "true");
@@ -55,12 +52,11 @@ public class DBConfig
 
 	@Autowired
 	@Bean(name = "sessionFactory")
-	public SessionFactory getSessionFactory(DataSource dataSource) 
-	{
+	public SessionFactory getSessionFactory(DataSource dataSource) {
 
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
-		sessionBuilder.addAnnotatedClass(User.class);
+		//sessionBuilder.addAnnotatedClass(User.class);
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
 		//sessionBuilder.addAnnotatedClass(Address.class);
