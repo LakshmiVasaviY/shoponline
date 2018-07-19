@@ -40,6 +40,7 @@ public class CategoryTestCase
 
 	}
 
+	/*
 	@Test
 	public void createCategoryTestCase() {
 		category.setId("CATG1");
@@ -79,5 +80,5 @@ public class CategoryTestCase
 		int actualSize = categoryDAO.list().size();
 		assertEquals(6, actualSize);
 	}
-
+  */
 }
