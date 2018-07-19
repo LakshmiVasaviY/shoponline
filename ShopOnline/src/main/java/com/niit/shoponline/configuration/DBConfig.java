@@ -19,6 +19,7 @@ import com.niit.shoponline.model.User;
 
 
 
+
 @Configuration
 @ComponentScan("com.niit")
 @EnableTransactionManagement
@@ -57,7 +58,7 @@ public class DBConfig
 
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
-		sessionBuilder.addAnnotatedClass(User.class);
+		//sessionBuilder.addAnnotatedClass(User.class);
 		//sessionBuilder.addAnnotatedClass(Category.class);
 		//sessionBuilder.addAnnotatedClass(Supplier.class);
 		//sessionBuilder.addAnnotatedClass(Address.class);
