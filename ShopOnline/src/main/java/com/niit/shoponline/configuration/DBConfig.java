@@ -15,6 +15,8 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.shoponline.model.Category;
+import com.niit.shoponline.model.Product;
+import com.niit.shoponline.model.Supplier;
 import com.niit.shoponline.model.User;
 
 
@@ -58,11 +60,11 @@ public class DBConfig
 
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
-		//sessionBuilder.addAnnotatedClass(User.class);
-		//sessionBuilder.addAnnotatedClass(Category.class);
-		//sessionBuilder.addAnnotatedClass(Supplier.class);
+		sessionBuilder.addAnnotatedClass(User.class);
+		sessionBuilder.addAnnotatedClass(Category.class);
+		sessionBuilder.addAnnotatedClass(Supplier.class);
 		//sessionBuilder.addAnnotatedClass(Address.class);
-		//sessionBuilder.addAnnotatedClass(Product.class);
+		sessionBuilder.addAnnotatedClass(Product.class);
 		//sessionBuilder.addAnnotatedClass(My_Cart.class);
 		//sessionBuilder.addAnnotatedClass(Contact.class);
 		sessionBuilder.scanPackages("com");
