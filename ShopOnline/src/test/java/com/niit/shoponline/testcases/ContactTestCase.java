@@ -3,6 +3,7 @@ package com.niit.shoponline.testcases;
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -33,12 +34,12 @@ public class ContactTestCase {
 		contact = (Contact) context.getBean("contact");
 
 	}
-
-	/*@Test
+	@Ignore
+	@Test
 	public void createContactTestCase() {
-		contact.setName("B Isaac Deva Varam");
-		contact.setEmail("isaacdv84@gmail.com");
-		contact.setContact("8194869957");
+		contact.setName("Suresh");
+		contact.setEmail("devaki@gmail.com");
+		contact.setContact("91948657");
 		contact.setMessage("Original : You designed a  web application");
 
 		boolean flag = contactDAO.save(contact);
@@ -46,7 +47,7 @@ public class ContactTestCase {
 		assertEquals("createContactTestCase", true, flag);
 
 	}
-
+    @Ignore
 	@Test
 	public void updateContactTestCase() {
 
@@ -55,11 +56,11 @@ public class ContactTestCase {
 		assertEquals("updateContactTestCase", true, flag);
 
 	}
-
+    @Ignore
 	@Test
 	public void listAllContactTestCase() {
 		int actualSize = contactDAO.list().size();
 		assertEquals(1, actualSize);
-	}*/
+	}
 
 }

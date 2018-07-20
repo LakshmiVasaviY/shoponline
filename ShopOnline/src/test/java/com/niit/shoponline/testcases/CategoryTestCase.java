@@ -3,6 +3,7 @@ package com.niit.shoponline.testcases;
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -40,31 +41,31 @@ public class CategoryTestCase
 
 	}
 
-	/*
+	@Ignore
 	@Test
 	public void createCategoryTestCase() {
-		category.setId("CATG1");
-		category.setName("Diabetic Medicine");
-		category.setDescription("Diabetic Medicine");
+		category.setId("2");
+		category.setName("Mobiles");
+		category.setDescription("Xiomi Mobiles");
 
 		boolean flag = categoryDAO.save(category);
 
 		assertEquals("createCategoryTestCase", true, flag);
 
 	}
-
+	@Ignore
 	@Test
 	public void updateCategoryTestCase() {
-		category.setId("CATG1");
-		category.setName("Dental Medicine");
-		category.setDescription("for tooth pain");
+		category.setId("2");
+		category.setName("Mobiles");
+		category.setDescription("Samsung Mobiles");
 
 		boolean flag = categoryDAO.update(category);
 
 		assertEquals("updateCategoryTestCase", true, flag);
 
 	}
-
+	@Ignore
 	@Test
 	public void deleteCategoryTestCase() {
 		category.setName("Dental Medicine");
@@ -73,12 +74,12 @@ public class CategoryTestCase
 		assertEquals("deleteCategoryTestCase", true, flag);
 
 	}
-
+	@Ignore
 	@Test
 	public void listAllCategoryTestCase() 
 	{
 		int actualSize = categoryDAO.list().size();
 		assertEquals(6, actualSize);
 	}
-  */
+  
 }

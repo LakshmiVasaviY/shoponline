@@ -3,6 +3,7 @@ package com.niit.shoponline.testcases;
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -34,19 +35,19 @@ public class ProductTestCase {
 		product = (Product)context.getBean("product");
 		
 	}
-	/*
+	
 	@Ignore
 	@Test
 	public void createProductTestCase()
 	{
 		
-		product.setId("PROD1");
-		product.setCategory_id("CATG1");
-		product.setDescription("Diabetic Medicine");
-		product.setName("Glimmy1");
-		product.setPrice(210);
-		product.setQuantity(1);
-		product.setSupplier_id("SUPP1");
+		product.setId("3");
+		product.setCategory_id("2");
+		product.setDescription("Samsung Galaxy S7 Gold Mobile");
+		product.setName("Samsung Galaxy s7");
+		product.setPrice(10000);
+		product.setQuantity(5);
+		product.setSupplier_id("2");
 		
 		boolean flag =  productDAO.saveOrUpdate(product);
 
@@ -58,10 +59,10 @@ public class ProductTestCase {
 	public void updateProductTestCase()
 	{
 		product.setId("PROD1");
-		product.setName("Glimmy2");
-		product.setDescription("Diabetic Medicine");
-		product.setCategory_id("CATG1");
-		product.setPrice(150);
+		product.setName("Lenovo Yoga 500");
+		product.setDescription("Lenovo Laptop");
+		product.setCategory_id("1");
+		product.setPrice(15000);
 		product.setSupplier_id("SUPP1");
 		product.setQuantity(2);
 		boolean flag = productDAO.saveOrUpdate(product);
@@ -73,5 +74,5 @@ public class ProductTestCase {
 	{
 		int actualSize = productDAO.list().size();
 		assertEquals(2, actualSize);
-	} */
+	} 
 }

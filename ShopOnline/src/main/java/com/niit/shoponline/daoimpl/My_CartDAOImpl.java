@@ -15,12 +15,15 @@ import com.niit.shoponline.model.My_Cart;
 
 @Repository("my_CartDAO")
 @Transactional
-public class My_CartDAOImpl implements My_CartDAO {
+public class My_CartDAOImpl implements My_CartDAO 
+
+{
 
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public My_CartDAOImpl(SessionFactory sessionFactory) {
+	public My_CartDAOImpl(SessionFactory sessionFactory) 
+	{
 		this.sessionFactory = sessionFactory;
 	}
 

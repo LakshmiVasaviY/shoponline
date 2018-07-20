@@ -64,7 +64,8 @@ public class ProductDAOImpl implements ProductDAO {
 				.setString(0, name).uniqueResult();
 	}
 
-	public List<Product> getAllProductsByCategoryId(String categoryId) {
+	public List<Product> getAllProductsByCategoryId(String categoryId) 
+	{
 		
 		String hql = "from Product where category_Id=?";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);

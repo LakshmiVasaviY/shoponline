@@ -14,10 +14,13 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.shoponline.model.Address;
 import com.niit.shoponline.model.Category;
+import com.niit.shoponline.model.Contact;
+import com.niit.shoponline.model.My_Cart;
 import com.niit.shoponline.model.Product;
 import com.niit.shoponline.model.Supplier;
-//import com.niit.shoponline.model.User;
+import com.niit.shoponline.model.User;
 
 
 @Configuration
@@ -52,17 +55,18 @@ public class DBConfig
 
 	@Autowired
 	@Bean(name = "sessionFactory")
-	public SessionFactory getSessionFactory(DataSource dataSource) {
+	public SessionFactory getSessionFactory(DataSource dataSource) 
+	{
 
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
-		//sessionBuilder.addAnnotatedClass(User.class);
+		sessionBuilder.addAnnotatedClass(User.class);
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
-		//sessionBuilder.addAnnotatedClass(Address.class);
+		sessionBuilder.addAnnotatedClass(Address.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
-		//sessionBuilder.addAnnotatedClass(My_Cart.class);
-		//sessionBuilder.addAnnotatedClass(Contact.class);
+		sessionBuilder.addAnnotatedClass(My_Cart.class);
+		sessionBuilder.addAnnotatedClass(Contact.class);
 		sessionBuilder.scanPackages("com");
 
 		return sessionBuilder.buildSessionFactory();

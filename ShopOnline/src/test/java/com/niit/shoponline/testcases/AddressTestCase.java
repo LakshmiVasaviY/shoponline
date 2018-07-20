@@ -3,6 +3,7 @@ package com.niit.shoponline.testcases;
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -11,9 +12,8 @@ import com.niit.shoponline.dao.AddressDAO;
 import com.niit.shoponline.model.Address;
 
 
-
-
-public class AddressTestCase {
+public class AddressTestCase 
+{
 
 	@Autowired
 	static AnnotationConfigApplicationContext context;
@@ -36,22 +36,24 @@ public class AddressTestCase {
 
 	}
 
-	/*@Test
+	
+	@Ignore
+	@Test
 	public void createAddressTestCase() {
-		address.setId("isaacaddress");
-		address.setUser_id("IsaacDV");
-		address.setH_no("55");
-		address.setStreet("Annamayya Enclave");
-		address.setCity("BHEL");
+		address.setId("2");
+		address.setUser_id("Lakshmi");
+		address.setH_no("5-78");
+		address.setStreet("Sai Enclave");
+		address.setCity("Kerala");
 		address.setCountry("India");
-		address.setPin("502032");
+		address.setPin("500002");
 
 		boolean flag = addressDAO.save(address);
 
 		assertEquals("createAddressTestCase", true, flag);
 
 	}
-
+    @Ignore
 	@Test
 	public void updateAddressTestCase() {
 		address.setId("SurenderAddress");
@@ -67,11 +69,12 @@ public class AddressTestCase {
 		assertEquals("createAddressTestCase", true, flag);
 
 	}
-
+    @Ignore
 	@Test
-	public void listAllAddressTestCase() {
+	public void listAllAddressTestCase() 
+    {
 		int actualSize = addressDAO.list().size();
 		assertEquals(2, actualSize);
-	}*/
+	}
 
 }

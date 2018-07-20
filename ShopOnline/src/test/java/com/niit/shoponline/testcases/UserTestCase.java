@@ -37,17 +37,17 @@ public class UserTestCase
 
 	}
 	
-	//@Ignore
+	@Ignore
 	@Test
 	public void createUserTestCase() {
-		user.setEmail("vasavi@gmail.com");
-		user.setId("001");
-		user.setName("Vasavi");
-		user.setPassword("Vasavi");
+		user.setEmail("devaki@gmail.com");
+		user.setId("003");
+		user.setName("Devaki");
+		user.setPassword("Suresh");
 		user.setCountry("India");
 		user.setAddress("Hyderabad");
-		user.setRole("ROLE_USER");
-		user.setContact("8194869957");
+		user.setRole("ROLE_ADMIN");
+		user.setContact("91245389");
 		boolean flag = userDAO.save(user);
 
 		assertEquals("createUserTestCase", true, flag);

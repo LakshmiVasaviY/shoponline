@@ -3,6 +3,7 @@ package com.niit.shoponline.testcases;
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -38,20 +39,20 @@ public class OrderTableTestCase {
 	}
 	
 	
-	/*
+	@Ignore
 	@Test
 	public void createOrderTableTestCase(){
-		orderTable.setId(1);
-		orderTable.setUser_id("IsaacDV");
+		orderTable.setId(2);
+		orderTable.setUser_id("Lakshmi");
 		orderTable.setStatus("N");
 		boolean flag = orderTableDAO.save(orderTable);
 		assertEquals("createOrderTableTestCase", true, flag);
 	}
-	
+	@Ignore
 	@Test
 	public void listTestCase(){
 		int orderedSize = orderTableDAO.list("IsaacDV").size();
 		assertEquals(1, orderedSize);
 	}
-*/
+
 }
