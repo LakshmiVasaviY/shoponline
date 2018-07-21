@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Midas Touch Register</title>
+<title>Shop Online Register</title>
 </head>
 <body>
-
+   
 	<div class="container">
   <h2>Register</h2>
   <form class="form-horizontal" action="Register" method="get">

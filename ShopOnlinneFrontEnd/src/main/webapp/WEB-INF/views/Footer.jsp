@@ -10,14 +10,14 @@
 </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Midas Touch Footer</title>
+<title>Shop Online Footer</title>
 </head>
 <body>
 	
 	<div class="navbar navbar-default navbar-custom navbar-fixed-bottom" style="height:15px;">
 		<div class="container-fluid">
 			<div class="navbar-text pull-left">
-				<p><marquee>&copy; Online Medical Store <b><i>Midas Touch</i></b> </marquee></p>
+				<p><marquee>&copy; Online Shopping Store <b><i>Shop Online</i></b> </marquee></p>
 			</div>
 			<div class="navbar-text noStyle pull-right">
 				<a href="https://www.facebook.com/isaac.devavaram" target="_blank">

@@ -16,7 +16,7 @@ border-radius:0px;
 
 <head>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<title>Midas Touch Header</title>
+<title>Shop Online</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,7 +29,7 @@ border-radius:0px;
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
 				<a href="Home" class="navbar-brand">
-					<img src="<c:url value="/resources/images/MidasTouch.jpg" />" alt="logo" style="max-height: 50px; margin-top: -15px;margin-left: -15px;">
+					<img src="<c:url value="/resources/images/ShopOnline1.jpg" />" alt="logo" style="max-height: 50px; margin-top: -15px;margin-left: -15px;">
 				</a>
 			</div>
 		
