@@ -5,8 +5,8 @@
 <style type="text/css">
 
 .navbar-custom {
-    color: #FFFFFF;
-    background-color: #304FFE;
+    color: #FCCFFF;
+    background-color: #ff66ff;
 }
 .navbar{
 border-radius:0px;
@@ -29,7 +29,7 @@ border-radius:0px;
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
 				<a href="Home" class="navbar-brand">
-					<img src="<c:url value="/resources/images/ShopOnline1.jpg" />" alt="logo" style="max-height: 50px; margin-top: -15px;margin-left: -15px;">
+					<img src="<c:url value="/resources/images/ShopOnline3.jpg" />" alt="logo" style="max-height: 50px; margin-top: -15px;margin-left: -15px;">
 				</a>
 			</div>
 		

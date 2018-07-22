@@ -225,11 +225,35 @@ $.getScript("https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles
 			<img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="img img-responsive img-circle center-block"/>
 			<h1 class="logo-caption"><span class="tweak">L</span>ogin</h1>
 		</div><!-- /.logo -->
-		<div class="controls">
-			<input type="text" name="username" placeholder="Username" class="form-control" />
-			<input type="text" name="username" placeholder="Password" class="form-control" />
-			<button type="button" class="btn btn-default btn-block btn-custom">Login</button>
-		</div><!-- /.controls -->
+		
+<div class="container">
+	
+		<c:url var="action" value="/j_spring_security_check" />
+		<form name="loginForm" class="form-horizontal" action="${action}" method="post">
+			<div class="form-group">
+
+				<div class="col-sm-3">
+					<input type="text" size="15" class="form-control" name="id" id="id" placeholder="Enter Username" pattern=".{5,15}" title="Username must have 5 to 15 characters" required>
+				</div>
+			</div>
+			<div class="form-group">
+					<div class="col-sm-3">
+					<input type="password" class="form-control" name="password" id="password" placeholder="Enter password" pattern=".{5,15}" title="Password must have 5 to 15 characters" required>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-success">
+						<i class="fa fa-sign-in" aria-hidden="true"></i> Login
+					</button>
+				</div>
+			</div>
+			<div class="container col-sm-offset-3 col-sm-9" style="color: red">${errorLoginMessage}</div>
+		</form>
+	</div>
+
 	</div><!-- /#login-box -->
 </div><!-- /.container -->
 <div id="particles-js"></div>
