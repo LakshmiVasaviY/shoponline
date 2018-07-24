@@ -5,8 +5,8 @@
 <style type="text/css">
 
 .navbar-custom {
-    color: #FCCFFF;
-    background-color: #ff66ff;
+    color: #FFFFFF;
+    background-color: #304FFE;
 }
 .navbar{
 border-radius:0px;

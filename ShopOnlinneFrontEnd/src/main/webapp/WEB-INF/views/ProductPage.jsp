@@ -4,7 +4,7 @@
 <head>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Shop Online Prod-Page</title>
+<title>Shop Online Product-Page</title>
 </head>
 <body>
 	<div class="container">
