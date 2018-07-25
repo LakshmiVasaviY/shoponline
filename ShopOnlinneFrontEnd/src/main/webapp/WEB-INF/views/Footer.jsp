@@ -5,7 +5,7 @@
 
 .navbar-custom {
     color: #FFFFFF;
-    background-color: #304FFE;
+    background-color: #9966ff;
 }
 </style>
 <head>

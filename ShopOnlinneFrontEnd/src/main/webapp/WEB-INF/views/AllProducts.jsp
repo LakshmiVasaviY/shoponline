@@ -35,6 +35,7 @@
 								<div>
 									
 									<c:if test="${isUserLoggedIn=='true'}">
+									Quantity <input type="number" name="quant" size=10>
 										<a href="myCart-add/${product.id}" class="btn btn-success">
 											Add to cart <i class="fa fa-cart-plus" aria-hidden="true"></i>
 										</a>

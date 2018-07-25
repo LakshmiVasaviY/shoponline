@@ -6,7 +6,7 @@
 
 .navbar-custom {
     color: #FFFFFF;
-    background-color: #304FFE;
+    background-color: #9966ff;
 }
 .navbar{
 border-radius:0px;

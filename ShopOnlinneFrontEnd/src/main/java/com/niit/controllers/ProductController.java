@@ -56,7 +56,7 @@ public class ProductController {
 	@Autowired
 	HttpSession session;
 
-	private String path = "//ShopOnlinneFrontEnd//src//main//webapp//resources//img";
+	private String path = "/ShopOnlinneFrontEnd/src/main/webapp/resources/img";
 	
 	@PostMapping("/manage-product-add")
 	public String addPorduct(@ModelAttribute("product") Product product, @RequestParam("image") MultipartFile file,
@@ -74,7 +74,7 @@ public class ProductController {
 		product.setId(Util.removeComman(product.getId()));
 		productDAO.saveOrUpdate(product);
 
-		FileUtil.upload(path, file, product.getId() + ".jpeg");
+		FileUtil.upload(path, file, product.getId() + ".jpg");
 
 		model.addAttribute("isAdminClickedProducts", "true");
 		model.addAttribute("isAdmin", "true");

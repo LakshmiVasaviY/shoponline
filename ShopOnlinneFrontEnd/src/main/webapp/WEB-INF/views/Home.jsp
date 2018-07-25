@@ -91,6 +91,10 @@
 		<jsp:include page="AllProducts.jsp"></jsp:include>
 	</c:if>
 
+	<c:if test="${isUserAtPaymentPage=='true'}">
+		<jsp:include page="user/payment.jsp"></jsp:include>
+		
+	</c:if>
 	
 	<jsp:include page="Footer.jsp"></jsp:include>
 

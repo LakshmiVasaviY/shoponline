@@ -69,9 +69,9 @@ public class CartController {
 		log.debug("Ending of myCart in CartController");
 		return "Home";
 	}
-	/*
+	
 	@RequestMapping("/myCart-quant/{id}")
-	public String updateQuantity(@PathVariable("id") int id),@RequestParam("quant") String quant){
+	public String updateQuantity(@PathVariable("id") int id,@RequestParam("quant") String quant){
 		
 		
 		My_Cart cart = myCartDAO.getCartById(id);
@@ -106,7 +106,7 @@ public class CartController {
 		
 		
 		return "redirect:/myCart";
-	}*/
+	}
 
 	@RequestMapping("/myCart-add/{id}")
 	public ModelAndView addToCart(@PathVariable("id") String id) {
