@@ -40,10 +40,8 @@
 		<jsp:include page="CategoryProducts.jsp"></jsp:include>
 	</c:if>
 	
-	<c:if test="${isUserCheckedOut=='true'}"> 
-		<jsp:include page="user/checkOut.jsp"></jsp:include>
-	</c:if>
 	
+
 	<c:if test="${isUserClickedCart=='true'}">
 		<jsp:include page="user/myCart.jsp"></jsp:include>
 	</c:if>
@@ -95,6 +93,12 @@
 		<jsp:include page="user/payment.jsp"></jsp:include>
 		
 	</c:if>
+	
+	<c:if test="${isUserCheckedOut=='true'}">
+		<jsp:include page="user/checkOut.jsp"></jsp:include>
+		
+	</c:if>
+	
 	
 	<jsp:include page="Footer.jsp"></jsp:include>
 

@@ -6,8 +6,22 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>MyCart</title>
+<style>
+body{
+  background: linear-gradient(to bottom, #68d8d6, #ffffff);
+  color: #454749;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  min-height: 100vh;
+}
+
+</style>
 </head>
 <body>
+	
+	
 	<div class="container">
 
 		<div id="viewCart">
@@ -37,16 +51,9 @@
 						<td>${cart.product_name}</td>
 						<td><fmt:formatDate pattern="dd/MM/yyyy" value="${cart.date_added}" /></td>
 						<td>
-								<input type="number" id="quant" value="${cart.quantity}"/>						
-						<!-- <form class="form-horizontal" action="myCart-quant/${cart.id}" method="get">
-	 							<div class="form-group">
-							        <input type="number" id="quant" value="${cart.quantity}"/>
-							    </div>
-							    <div class="form-group">
-							        <button type="submit"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-    							</div>
-    						</form> -->
-    					</td>
+								<!-- <input type="text" readonly="readonly" id="quant" value="${cart.quantity}"/>  -->						
+						${cart.quantity}
+		</td>
 						<td>${cart.price}</td>
 						<td><a href="myCart-delete/${cart.id}" class="btn btn-danger">Remove</a></td>
 					</tr>
@@ -55,7 +62,7 @@
 				<tr>
 					<td><a href="Home" class="btn btn-warning">Continue Shopping</a></td>
 					<td></td>
-					<td>Total Rs. ${totalAmount}</td>
+					<td><td>Total Rs. ${totalAmount}</td>
 					<td><a href="myCart-payment" class="btn btn-success">Proceed to Pay</a></td>
 				</tr>
 

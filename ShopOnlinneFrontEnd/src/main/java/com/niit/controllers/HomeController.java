@@ -157,7 +157,7 @@ public class HomeController {
 	}
 	@RequestMapping("/myCart-payment")
 	public String paymentPage(Model model) {
-		model.addAttribute("isUserClickedPaymentPage", "true");
+		model.addAttribute("isUserAtPaymentPage", "true");
 		model.addAttribute("isUserAtHomePage", "false");
 		return "Home";
        }

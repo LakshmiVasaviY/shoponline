@@ -69,7 +69,7 @@ public class CartController {
 		log.debug("Ending of myCart in CartController");
 		return "Home";
 	}
-	
+	/*
 	@RequestMapping("/myCart-quant/{id}")
 	public String updateQuantity(@PathVariable("id") int id,@RequestParam("quant") String quant){
 		
@@ -80,9 +80,12 @@ public class CartController {
 		
 		String loggedInUserID = (String) session.getAttribute("loggedInUserID");
 		
-		//myCartDAO.updateQuant(quant, loggedInUserID);
 		
 		int q = Integer.parseInt(quant);
+	
+		myCartDAO.updateQuant(q, loggedInUserID);
+		
+		//int q = Integer.parseInt(quant);
 		cart.setQuantity(q);
 		
 		System.out.println();
@@ -93,27 +96,28 @@ public class CartController {
 		System.out.println();
 		System.out.println();
 		
-		double p = product.getPrice()*q;
+		double p = product.getPrice()*quant;
 		
 		System.out.println(p);
 		System.out.println();
 		System.out.println();
 		System.out.println();
 		
-		//myCartDAO.updatePrice(p,loggedInUserID);
+		myCartDAO.updatePrice(p,loggedInUserID);
 		
 		cart.setPrice(p);
 		
 		
 		return "redirect:/myCart";
 	}
-
+*/
 	@RequestMapping("/myCart-add/{id}")
 	public ModelAndView addToCart(@PathVariable("id") String id) {
 		log.debug("Starting of addToCart in CartController");
 
 		Product product = productDAO.getProductById(id);
 
+		
 		myCart.setProduct_name(product.getName());
 		myCart.setPrice((product.getPrice()));
 

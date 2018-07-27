@@ -1,98 +1,413 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Shop Online Payment Page</title>
+<style type="text/css">
+html,body,.wrapper{
+    background: #f7f7f7;
+}
+.steps {
+    margin-top: -41px;
+    display: inline-block;
+    float: right;
+    font-size: 16px
+}
+.step {
+    float: left;
+    background: white;
+    padding: 7px 13px;
+    border-radius: 1px;
+    text-align: center;
+    width: 100px;
+    position: relative
+}
+.step_line {
+    margin: 0;
+    width: 0;
+    height: 0;
+    border-left: 16px solid #fff;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    z-index: 1008;
+    position: absolute;
+    left: 99px;
+    top: 1px
+}
+.step_line.backline {
+    border-left: 20px solid #f7f7f7;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    z-index: 1006;
+    position: absolute;
+    left: 99px;
+    top: -3px
+}
+.step_complete {
+    background: #357ebd
+}
+.step_complete a.check-bc, .step_complete a.check-bc:hover,.afix-1,.afix-1:hover{
+    color: #eee;
+}
+.step_line.step_complete {
+    background: 0;
+    border-left: 16px solid #357ebd
+}
+.step_thankyou {
+    float: left;
+    background: white;
+    padding: 7px 13px;
+    border-radius: 1px;
+    text-align: center;
+    width: 100px;
+}
+.step.check_step {
+    margin-left: 5px;
+}
+.ch_pp {
+    text-decoration: underline;
+}
+.ch_pp.sip {
+    margin-left: 10px;
+}
+.check-bc,
+.check-bc:hover {
+    color: #222;
+}
+.SuccessField {
+    border-color: #458845 !important;
+    -webkit-box-shadow: 0 0 7px #9acc9a !important;
+    -moz-box-shadow: 0 0 7px #9acc9a !important;
+    box-shadow: 0 0 7px #9acc9a !important;
+    background: #f9f9f9 url(../images/valid.png) no-repeat 98% center !important
+}
+
+.btn-xs{
+    line-height: 28px;
+}
+
+/*login form*/
+.login-container{
+    margin-top:30px ;
+}
+.login-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.login-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.login-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.login-container-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  background-color: #357ebd;/*#4d90fe;*/
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.login-container-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.login-help{
+  font-size: 12px;
+}
+
+.asterix{
+    background:#f9f9f9 url(../images/red_asterisk.png) no-repeat 98% center !important;
+}
+
+/* images*/
+ol, ul {
+  list-style: none;
+}
+.hand {
+  cursor: pointer;
+  cursor: pointer;
+}
+.cards{
+    padding-left:0;
+}
+.cards li {
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -ms-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
+  background-position: 0 0;
+  float: left;
+  height: 32px;
+  margin-right: 8px;
+  text-indent: -9999px;
+  width: 51px;
+}
+.cards .mastercard {
+  background-position: -51px 0;
+}
+.cards li {
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -ms-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
+  background-position: 0 0;
+  float: left;
+  height: 32px;
+  margin-right: 8px;
+  text-indent: -9999px;
+  width: 51px;
+}
+.cards .amex {
+  background-position: -102px 0;
+}
+.cards li {
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -ms-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
+  background-position: 0 0;
+  float: left;
+  height: 32px;
+  margin-right: 8px;
+  text-indent: -9999px;
+  width: 51px;
+}
+.cards li:last-child {
+  margin-right: 0;
+}
+/* images end */
 
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+
+/*
+ * BOOTSTRAP
+ */
+.container{
+    border: none;
+}
+.panel-footer{
+    background:#fff;
+}
+.btn{
+    border-radius: 1px;
+}
+.btn-sm, .btn-group-sm > .btn{
+    border-radius: 1px;
+}
+.input-sm, .form-horizontal .form-group-sm .form-control{
+    border-radius: 1px;
+}
+
+.panel-info {
+    border-color: #999;
+}
+
+.panel-heading {
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+}
+.panel {
+    border-radius: 1px;
+}
+.panel-info > .panel-heading {
+    color: #eee;
+    border-color: #999;
+}
+.panel-info > .panel-heading {
+    background-image: linear-gradient(to bottom, #555 0px, #888 100%);
+}
+
+hr {
+    border-color: #999 -moz-use-text-color -moz-use-text-color;
+}
+
+.panel-footer {
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    border-top: 1px solid #999;
+}
+
+.btn-link {
+    color: #888;
+}
+
+hr{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/** MEDIA QUERIES **/
+@media only screen and (max-width: 989px){
+    .span1{
+        margin-bottom: 15px;
+        clear:both;
+    }
+}
+
+@media only screen and (max-width: 764px){
+    .inverse-1{
+        float:right;
+    }
+}
+
+@media only screen and (max-width: 586px){
+    .cart-titles{
+        display:none;
+    }
+    .panel {
+        margin-bottom: 1px;
+    }
+}
+
+.form-control {
+    border-radius: 1px;
+}
+
+@media only screen and (max-width: 486px){
+    .col-xss-12{
+        width:100%;
+    }
+    .cart-img-show{
+        display: none;
+    }
+    .btn-submit-fix{
+        width:100%;
+    }
+    
+}
+/*
+@media only screen and (max-width: 777px){
+    .container{
+        overflow-x: hidden;
+    }
+}*/
+
+
+
+
+
+</style>
 
 </head>
-<body>
 
- <div class="col-md-6 offset-md-3">
-                    <span class="anchor" id="formPayment"></span>
-                    <hr class="my-5">
+</html>
 
-                    <!-- form card cc payment -->
-                    <div class="card card-outline-secondary">
-                        <div class="card-body">
-                            <h3 class="text-center">Credit Card Payment</h3>
-                            <hr>
-                            <div class="alert alert-info p-2 pb-3">
-                                <a class="close font-weight-normal initialism" data-dismiss="alert" href="#"><samp>×</samp></a> 
-                                CVC code is required.
+
+<!--CREDIT CART PAYMENT-->
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure Payment</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Card Type:</strong></div>
+                                <div class="col-md-5">
+                                    <select id="CreditCardType" name="CreditCardType" class="form-control">
+                                        <option value="5">Visa</option>
+                                        <option value="6">MasterCard</option>
+                                        <option value="7">American Express</option>
+                                        <option value="8">Discover</option>
+                                    </select>
+                                </div>
                             </div>
-                            <form class="form" role="form" autocomplete="off">
-                                <div class="form-group">
-                                    <label for="cc_name">Card Holder's Name</label>
-                                    <input type="text" class="form-control" id="cc_name" pattern="\w+ \w+.*" title="First and last name" required="required">
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Credit Card Number:</strong></div>
+                                <div class="col-md-5"><input type="text" class="form-control" name="car_number" value="" /></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Card CVV:</strong></div>
+                                <div class="col-md-5"><input type="text" class="form-control" name="car_code" value="" /></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <strong>Expiration Date</strong>
                                 </div>
-                                <div class="form-group">
-                                    <label>Card Number</label>
-                                    <input type="text" class="form-control" autocomplete="off" maxlength="20" pattern="\d{16}" title="Credit card number" required="">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <select class="form-control" name="">
+                                        <option value="">Month</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                </select>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-12">Card Exp. Date</label>
-                                    <div class="col-md-4">
-                                        <select class="form-control" name="cc_exp_mo" size="0">
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
-                                            <option value="07">07</option>
-                                            <option value="08">08</option>
-                                            <option value="09">09</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <select class="form-control" name="cc_exp_yr" size="0">
-                                            <option>2018</option>
-                                            <option>2019</option>
-                                            <option>2020</option>
-                                            <option>2021</option>
-                                            <option>2022</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="text" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required="" placeholder="CVC">
-                                    </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <select class="form-control" name="">
+                                        <option value="">Year</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                </select>
                                 </div>
-                                <div class="row">
-                                    <label class="col-md-12">Amount</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <span>Pay secure using your credit card.</span>
                                 </div>
-                                <div class="form-inline">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                        <input type="text" class="form-control text-right" id="exampleInputAmount" placeholder="39">
-                                        <div class="input-group-append"><span class="input-group-text">.00</span></div>
-                                    </div>
+                                <div class="col-md-12">
+                                    <ul class="cards">
+                                        <li class="visa hand">Visa</li>
+                                        <li class="mastercard hand">MasterCard</li>
+                                        <li class="amex hand">Amex</li>
+                                    </ul>
+                                    <div class="clearfix"></div>
                                 </div>
-                                <hr>
-                                <div class="form-group row">
-                                    <div class="col-md-6">
-                                        <button type="reset" class="btn btn-default btn-lg btn-block">Cancel</button>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
-                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                   <!--  <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button>-->
+                               <a href="checkout" class="btn btn-success btn-lg btn-block" role="button"> Continue to Pay</a>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
-                    <!-- /form card cc payment -->
-                
-                <p class="copyright" style="text-align:center;padding:40px 0;">Developed by <a href="https://uny.ro">UNY WEB DESIGN</a></p>  
-
-</body>
-</html>
+                    <!--CREDIT CART PAYMENT END-->
+                    
+                 
